@@ -100,7 +100,6 @@ class App(tk.Tk):
             "Ctrl+W - Получить статус беспроводных интерфейсов\n"
             "Ctrl+S - Получить разрешение экрана\n"
             "Ctrl+T - Открыть терминал\n"
-            "Ctrl+R - Открыть всплывающее окно с процессами\n"
         )
         messagebox.showinfo("Горячие клавиши", hotkeys_text)
 
@@ -110,7 +109,6 @@ class App(tk.Tk):
         self.bind_all("<Control-w>", lambda e: self.hotkey_get_wireless_status())
         self.bind_all("<Control-s>", lambda e: self.hotkey_get_screen_resolution())
         self.bind_all("<Control-t>", lambda e: self.hotkey_show_terminal_tab())
-        self.bind_all("<Control-r>", lambda e: self.open_popup_window())
 
     def hotkey_get_processes(self):
         idx = self.notebook.index(self.process_frame)
