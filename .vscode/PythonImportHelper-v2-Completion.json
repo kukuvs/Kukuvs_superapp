@@ -1,0 +1,430 @@
+[
+    {
+        "label": "runpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "runpy",
+        "description": "runpy",
+        "detail": "runpy",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "ttk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "scrolledtext",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "multiprocessing",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "multiprocessing",
+        "description": "multiprocessing",
+        "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "platform",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "platform",
+        "description": "platform",
+        "detail": "platform",
+        "documentation": {}
+    },
+    {
+        "label": "psutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "psutil",
+        "description": "psutil",
+        "detail": "psutil",
+        "documentation": {}
+    },
+    {
+        "label": "netifaces",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "netifaces",
+        "description": "netifaces",
+        "detail": "netifaces",
+        "documentation": {}
+    },
+    {
+        "label": "screeninfo",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "screeninfo",
+        "description": "screeninfo",
+        "detail": "screeninfo",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"kukuvs-superapp\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"kukuvs-superapp\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"kukuvs-superapp\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"kukuvs-superapp\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"kukuvs-superapp\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": ".venv.Scripts.activate_this",
+        "description": ".venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": ".venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "App",
+        "kind": 6,
+        "importPath": "gui",
+        "description": "gui",
+        "peekOfCode": "class App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")\n        self.server_address = SERVER_ADDRESS\n        self.create_widgets()\n        self.create_menu()\n        self.bind_hotkeys()\n    def create_menu(self):",
+        "detail": "gui",
+        "documentation": {}
+    },
+    {
+        "label": "popup_process",
+        "kind": 2,
+        "importPath": "gui",
+        "description": "gui",
+        "peekOfCode": "def popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")\n            self.geometry(\"600x400\")",
+        "detail": "gui",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_ADDRESS",
+        "kind": 5,
+        "importPath": "gui",
+        "description": "gui",
+        "peekOfCode": "SERVER_ADDRESS = ('localhost', 12345)\n# Функция для запуска всплывающего окна в отдельном процессе\ndef popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()",
+        "detail": "gui",
+        "documentation": {}
+    },
+    {
+        "label": "get_processes",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_processes():\n    processes = []\n    for proc in psutil.process_iter(['pid', 'name', 'username', 'create_time']):\n        info = proc.info\n        # Сохраняем процессы, запущенные во время работы приложения\n        pid = info['pid']\n        if pid not in tracked_processes:\n            tracked_processes[pid] = info['create_time']\n        processes.append({\n            'pid': pid,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_tracked_processes_report",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_tracked_processes_report():\n    # Возвращает список процессов, запущенных во время работы приложения (имя + время старта)\n    report = []\n    for pid, start_time in tracked_processes.items():\n        try:\n            p = psutil.Process(pid)\n            report.append({\n                'name': p.name(),\n                'start_time': datetime.datetime.fromtimestamp(start_time).strftime('%Y-%m-%d %H:%M:%S')\n            })",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "save_report_to_file",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def save_report_to_file(report, filename=\"process_report.txt\"):\n    try:\n        with open(filename, 'w', encoding='utf-8') as f:\n            for proc in report:\n                f.write(f\"Process: {proc['name']}, Start Time: {proc['start_time']}\\n\")\n        return f\"Отчет сохранен в {filename}\"\n    except Exception as e:\n        return f\"Ошибка при сохранении отчета: {e}\"\ndef get_removable_drives():\n    # Получаем список съемных носителей",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_removable_drives",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_removable_drives():\n    # Получаем список съемных носителей\n    partitions = psutil.disk_partitions(all=False)\n    removable = []\n    for p in partitions:\n        # В Windows съемные носители имеют opts с 'removable'\n        # В Linux можно проверить через p.device или p.opts\n        if 'removable' in p.opts or ('/media' in p.mountpoint) or ('/run/media' in p.mountpoint):\n            removable.append({\n                'device': p.device,",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_wireless_status",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_wireless_status():\n    return psutil.net_if_stats()\ndef get_network_settings():\n    return netifaces.interfaces()\ndef get_screen_resolution():\n    screen = screeninfo.get_monitors()[0]\n    return screen.width, screen.height\ndef execute_command(command):\n    try:\n        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_network_settings",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_network_settings():\n    return netifaces.interfaces()\ndef get_screen_resolution():\n    screen = screeninfo.get_monitors()[0]\n    return screen.width, screen.height\ndef execute_command(command):\n    try:\n        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n        try:\n            # Декодируем из cp866 (кодировка консоли Windows)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_screen_resolution",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_screen_resolution():\n    screen = screeninfo.get_monitors()[0]\n    return screen.width, screen.height\ndef execute_command(command):\n    try:\n        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n        try:\n            # Декодируем из cp866 (кодировка консоли Windows)\n            output = result.stdout.decode('cp866')\n        except UnicodeDecodeError:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "execute_command",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def execute_command(command):\n    try:\n        result = subprocess.run(command, shell=True, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)\n        try:\n            # Декодируем из cp866 (кодировка консоли Windows)\n            output = result.stdout.decode('cp866')\n        except UnicodeDecodeError:\n            output = result.stdout.decode('cp866', errors='replace')\n        return output\n    except subprocess.CalledProcessError as e:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_network_config",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_network_config():\n    try:\n        system = platform.system().lower()\n        if system == 'windows':\n            cmd = 'ipconfig /all'\n            encoding = 'cp866'\n        else:\n            # Linux / MacOS\n            try:\n                subprocess.run(['ifconfig'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "linux_terminal",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def linux_terminal(command):\n    commands = {\n        'ls': 'ls -la',\n        'pwd': 'pwd',\n        'whoami': 'whoami',\n        'date': 'date',\n        'uptime': 'uptime',\n        'df': 'df -h',\n        'free': 'free -m',\n        'ps': 'ps aux',",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "handle_client",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def handle_client(conn):\n    try:\n        data = conn.recv(4096).decode('utf-8')\n        if not data:\n            return\n        request = json.loads(data)\n        cmd = request.get('command')\n        if cmd == 'get_processes':\n            response = get_processes()\n        elif cmd == 'get_wireless_status':",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def start_server():\n    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n    server.bind(('localhost', 12345))\n    server.listen(5)\n    print(\"Server started...\")\n    while True:\n        try:\n            conn, addr = server.accept()\n            # Обработка клиента в отдельном потоке для параллельности\n            client_thread = threading.Thread(target=handle_client, args=(conn,))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tracked_processes",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "tracked_processes = {}\n# Лог-файл для сохранения отчетов\nLOG_FILE = \"process_report.log\"\ndef get_processes():\n    processes = []\n    for proc in psutil.process_iter(['pid', 'name', 'username', 'create_time']):\n        info = proc.info\n        # Сохраняем процессы, запущенные во время работы приложения\n        pid = info['pid']\n        if pid not in tracked_processes:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "LOG_FILE",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "LOG_FILE = \"process_report.log\"\ndef get_processes():\n    processes = []\n    for proc in psutil.process_iter(['pid', 'name', 'username', 'create_time']):\n        info = proc.info\n        # Сохраняем процессы, запущенные во время работы приложения\n        pid = info['pid']\n        if pid not in tracked_processes:\n            tracked_processes[pid] = info['create_time']\n        processes.append({",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start_server",
+        "kind": 2,
+        "importPath": "run_app",
+        "description": "run_app",
+        "peekOfCode": "def start_server():\n    # Запуск серверной части\n    server_process = subprocess.Popen([sys.executable, 'server.py'])\n    return server_process\ndef start_gui():\n    # Запуск GUI части\n    gui_process = subprocess.Popen([sys.executable, 'gui.py'])\n    return gui_process\ndef main():\n    # Запуск сервера и GUI",
+        "detail": "run_app",
+        "documentation": {}
+    },
+    {
+        "label": "start_gui",
+        "kind": 2,
+        "importPath": "run_app",
+        "description": "run_app",
+        "peekOfCode": "def start_gui():\n    # Запуск GUI части\n    gui_process = subprocess.Popen([sys.executable, 'gui.py'])\n    return gui_process\ndef main():\n    # Запуск сервера и GUI\n    server_process = start_server()\n    gui_process = start_gui()\n    try:\n        # Ожидание завершения процессов",
+        "detail": "run_app",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "run_app",
+        "description": "run_app",
+        "peekOfCode": "def main():\n    # Запуск сервера и GUI\n    server_process = start_server()\n    gui_process = start_gui()\n    try:\n        # Ожидание завершения процессов\n        server_process.wait()\n        gui_process.wait()\n    except KeyboardInterrupt:\n        # Обработка завершения по Ctrl+C",
+        "detail": "run_app",
+        "documentation": {}
+    }
+]
