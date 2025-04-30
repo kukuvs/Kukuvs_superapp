@@ -105,12 +105,38 @@ class App(tk.Tk):
         messagebox.showinfo("Горячие клавиши", hotkeys_text)
 
     def bind_hotkeys(self):
-        self.bind_all("<Control-p>", lambda e: self.get_processes())
-        self.bind_all("<Control-n>", lambda e: self.get_network_config())
-        self.bind_all("<Control-w>", lambda e: self.get_wireless_status())
-        self.bind_all("<Control-s>", lambda e: self.get_screen_resolution())
-        self.bind_all("<Control-t>", lambda e: self.show_terminal_tab())
+        self.bind_all("<Control-p>", lambda e: self.hotkey_get_processes())
+        self.bind_all("<Control-n>", lambda e: self.hotkey_get_network_config())
+        self.bind_all("<Control-w>", lambda e: self.hotkey_get_wireless_status())
+        self.bind_all("<Control-s>", lambda e: self.hotkey_get_screen_resolution())
+        self.bind_all("<Control-t>", lambda e: self.hotkey_show_terminal_tab())
         self.bind_all("<Control-r>", lambda e: self.open_popup_window())
+
+    def hotkey_get_processes(self):
+        idx = self.notebook.index(self.process_frame)
+        self.notebook.select(idx)
+        self.get_processes()
+
+    def hotkey_get_network_config(self):
+        idx = self.notebook.index(self.network_frame)
+        self.notebook.select(idx)
+        self.get_network_config()
+
+    def hotkey_get_wireless_status(self):
+        idx = self.notebook.index(self.wireless_frame)
+        self.notebook.select(idx)
+        self.get_wireless_status()
+
+    def hotkey_get_screen_resolution(self):
+        idx = self.notebook.index(self.screen_frame)
+        self.notebook.select(idx)
+        self.get_screen_resolution()
+
+    def hotkey_show_terminal_tab(self):
+        idx = self.notebook.index(self.terminal_frame)
+        self.notebook.select(idx)
+        # Можно очистить поле ввода и вывода, если нужно
+        self.command_entry.focus_set()
 
     def create_widgets(self):
         notebook = ttk.Notebook(self)
