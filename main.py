@@ -1,5 +1,6 @@
 import platform
 import socket
+import os
 import json
 import psutil
 import netifaces
@@ -7,7 +8,7 @@ import screeninfo
 import subprocess
 import threading
 import datetime
-
+import shutil
 # Глобальный список для хранения процессов, запущенных во время работы приложения
 tracked_processes = {}
 
@@ -146,6 +147,38 @@ def linux_terminal(command):
     except subprocess.CalledProcessError as e:
         return e.stderr.decode('utf-8', errors='replace')
 
+def list_directory(path):
+    try:
+        entries = []
+        with os.scandir(path) as it:
+            for entry in it:
+                entries.append({
+                    'name': entry.name,
+                    'is_dir': entry.is_dir(),
+                    'size': entry.stat().st_size if not entry.is_dir() else None,
+                    'mtime': entry.stat().st_mtime
+                })
+        return entries
+    except Exception as e:
+        return {'error': str(e)}
+
+def copy_item(src, dst):
+    try:
+        if os.path.isdir(src):
+            shutil.copytree(src, dst)
+        else:
+            shutil.copy2(src, dst)
+        return "Копирование успешно"
+    except Exception as e:
+        return f"Ошибка копирования: {e}"
+
+def move_item(src, dst):
+    try:
+        shutil.move(src, dst)
+        return "Перемещение успешно"
+    except Exception as e:
+        return f"Ошибка перемещения: {e}"
+
 def handle_client(conn):
     try:
         data = conn.recv(4096).decode('utf-8')
@@ -177,6 +210,19 @@ def handle_client(conn):
         elif cmd == 'linux_terminal':
             command = request.get('data', '')
             response = linux_terminal(command)
+        elif cmd == 'list_directory':
+            path = request.get('data', '.')
+            response = list_directory(path)
+        elif cmd == 'copy_item':
+            data = request.get('data', {})
+            src = data.get('src')
+            dst = data.get('dst')
+            response = copy_item(src, dst)
+        elif cmd == 'move_item':
+            data = request.get('data', {})
+            src = data.get('src')
+            dst = data.get('dst')
+            response = move_item(src, dst)
         else:
             response = {'error': 'Unknown command'}
         conn.sendall(json.dumps(response, ensure_ascii=False).encode('utf-8'))

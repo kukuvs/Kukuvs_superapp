@@ -44,48 +44,6 @@
         "documentation": {}
     },
     {
-        "label": "tkinter",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "tkinter",
-        "description": "tkinter",
-        "detail": "tkinter",
-        "documentation": {}
-    },
-    {
-        "label": "ttk",
-        "importPath": "tkinter",
-        "description": "tkinter",
-        "isExtraImport": true,
-        "detail": "tkinter",
-        "documentation": {}
-    },
-    {
-        "label": "scrolledtext",
-        "importPath": "tkinter",
-        "description": "tkinter",
-        "isExtraImport": true,
-        "detail": "tkinter",
-        "documentation": {}
-    },
-    {
-        "label": "messagebox",
-        "importPath": "tkinter",
-        "description": "tkinter",
-        "isExtraImport": true,
-        "detail": "tkinter",
-        "documentation": {}
-    },
-    {
-        "label": "socket",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "socket",
-        "description": "socket",
-        "detail": "socket",
-        "documentation": {}
-    },
-    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -101,6 +59,113 @@
         "importPath": "multiprocessing",
         "description": "multiprocessing",
         "detail": "multiprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "pprint",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pprint",
+        "description": "pprint",
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "tkinter",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "messagebox",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "scrolledtext",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "ttk",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Callable",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
         "documentation": {}
     },
     {
@@ -164,6 +229,15 @@
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
         "documentation": {}
     },
     {
@@ -248,20 +322,29 @@
         "documentation": {}
     },
     {
-        "label": "App",
+        "label": "PopupWindow",
         "kind": 6,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "class App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")\n        self.server_address = SERVER_ADDRESS\n        self.detached_tabs = {}  # key: tab_text, value: (frame, index, window)\n        self.create_widgets()\n        self.create_menu()\n        self.bind_hotkeys()",
+        "peekOfCode": "class PopupWindow(tk.Tk):\n    \"\"\"Всплывающее окно с отчетом о процессах, запускается в отдельном процессе.\"\"\"\n    def __init__(self) -> None:\n        super().__init__()\n        self.title(\"Popup Process Report\")\n        self.geometry(\"600x400\")\n        self._create_widgets()\n        self.refresh_report()\n    def _create_widgets(self) -> None:\n        self.text = scrolledtext.ScrolledText(self, wrap=tk.WORD)",
         "detail": "gui",
         "documentation": {}
     },
     {
-        "label": "popup_process",
+        "label": "App",
+        "kind": 6,
+        "importPath": "gui",
+        "description": "gui",
+        "peekOfCode": "class App(tk.Tk):\n    \"\"\"Основное приложение с вкладками и функционалом.\"\"\"\n    def __init__(self) -> None:\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")\n        self.server_address = SERVER_ADDRESS\n        self.detached_tabs: Dict[str, Tuple[tk.Widget, int, tk.Toplevel]] = {}\n        self._create_widgets()\n        self._create_menu()",
+        "detail": "gui",
+        "documentation": {}
+    },
+    {
+        "label": "run_popup_window",
         "kind": 2,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "def popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext, messagebox\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")\n            self.geometry(\"600x400\")",
+        "peekOfCode": "def run_popup_window() -> None:\n    \"\"\"Функция запуска всплывающего окна в отдельном процессе.\"\"\"\n    app = PopupWindow()\n    app.mainloop()\nclass App(tk.Tk):\n    \"\"\"Основное приложение с вкладками и функционалом.\"\"\"\n    def __init__(self) -> None:\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")",
         "detail": "gui",
         "documentation": {}
     },
@@ -270,7 +353,7 @@
         "kind": 5,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "SERVER_ADDRESS = ('localhost', 12345)\ndef popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext, messagebox\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")",
+        "peekOfCode": "SERVER_ADDRESS = ('localhost', 12345)\nclass PopupWindow(tk.Tk):\n    \"\"\"Всплывающее окно с отчетом о процессах, запускается в отдельном процессе.\"\"\"\n    def __init__(self) -> None:\n        super().__init__()\n        self.title(\"Popup Process Report\")\n        self.geometry(\"600x400\")\n        self._create_widgets()\n        self.refresh_report()\n    def _create_widgets(self) -> None:",
         "detail": "gui",
         "documentation": {}
     },
@@ -361,6 +444,33 @@
         "importPath": "main",
         "description": "main",
         "peekOfCode": "def linux_terminal(command):\n    commands = {\n        'ls': 'ls -la',\n        'pwd': 'pwd',\n        'whoami': 'whoami',\n        'date': 'date',\n        'uptime': 'uptime',\n        'df': 'df -h',\n        'free': 'free -m',\n        'ps': 'ps aux',",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "list_directory",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def list_directory(path):\n    try:\n        entries = []\n        with os.scandir(path) as it:\n            for entry in it:\n                entries.append({\n                    'name': entry.name,\n                    'is_dir': entry.is_dir(),\n                    'size': entry.stat().st_size if not entry.is_dir() else None,\n                    'mtime': entry.stat().st_mtime",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "copy_item",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def copy_item(src, dst):\n    try:\n        if os.path.isdir(src):\n            shutil.copytree(src, dst)\n        else:\n            shutil.copy2(src, dst)\n        return \"Копирование успешно\"\n    except Exception as e:\n        return f\"Ошибка копирования: {e}\"\ndef move_item(src, dst):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "move_item",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def move_item(src, dst):\n    try:\n        shutil.move(src, dst)\n        return \"Перемещение успешно\"\n    except Exception as e:\n        return f\"Ошибка перемещения: {e}\"\ndef handle_client(conn):\n    try:\n        data = conn.recv(4096).decode('utf-8')\n        if not data:",
         "detail": "main",
         "documentation": {}
     },
