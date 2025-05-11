@@ -252,7 +252,7 @@
         "kind": 6,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "class App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")\n        self.server_address = SERVER_ADDRESS\n        self.create_widgets()\n        self.create_menu()\n        self.bind_hotkeys()\n    def create_menu(self):",
+        "peekOfCode": "class App(tk.Tk):\n    def __init__(self):\n        super().__init__()\n        self.title(\"System Monitor\")\n        self.geometry(\"900x700\")\n        self.server_address = SERVER_ADDRESS\n        self.detached_tabs = {}  # key: tab_text, value: (frame, index, window)\n        self.create_widgets()\n        self.create_menu()\n        self.bind_hotkeys()",
         "detail": "gui",
         "documentation": {}
     },
@@ -261,7 +261,7 @@
         "kind": 2,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "def popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")\n            self.geometry(\"600x400\")",
+        "peekOfCode": "def popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext, messagebox\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")\n            self.geometry(\"600x400\")",
         "detail": "gui",
         "documentation": {}
     },
@@ -270,7 +270,7 @@
         "kind": 5,
         "importPath": "gui",
         "description": "gui",
-        "peekOfCode": "SERVER_ADDRESS = ('localhost', 12345)\n# Функция для запуска всплывающего окна в отдельном процессе\ndef popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()",
+        "peekOfCode": "SERVER_ADDRESS = ('localhost', 12345)\ndef popup_process():\n    import tkinter as tk\n    from tkinter import ttk, scrolledtext, messagebox\n    import socket\n    import json\n    class PopupApp(tk.Tk):\n        def __init__(self):\n            super().__init__()\n            self.title(\"Popup Process Report\")",
         "detail": "gui",
         "documentation": {}
     },
